@@ -40,3 +40,32 @@ function ToyCar(brand, model, color, sku, upc, carBrand, scale, vehicleType, dec
         `;
     };
 }
+//  Methods for Updating Price, Color, and Features
+
+// Method to update price
+ToyCar.prototype.updatePrice = function(newPrice) {
+    this.price = newPrice;
+    document.querySelector('#price-display').textContent = `$${this.price}`;
+};
+
+// Method to update color
+ToyCar.prototype.updateColor = function(newColor) {
+    this.color = newColor;
+    document.querySelector('#color-display').textContent = this.color;
+};
+
+// Method to add new feature
+ToyCar.prototype.addFeature = function(newFeature) {
+    if (!this.features.includes(newFeature)) {
+        this.features.push(newFeature);
+        this.updateFeatureList();
+    } else {
+        alert('Feature already exists!');
+    }
+};
+
+// Method to update feature list in the HTML
+ToyCar.prototype.updateFeatureList = function() {
+    const featureList = document.querySelector('#feature-list');
+    featureList.innerHTML = this.features.map(feature => `<li>${feature}</li>`).join('');
+};
