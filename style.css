@@ -34,7 +34,6 @@ body {
     font-size: 2em;
     text-transform: uppercase;
 }
-/* Step 2: Styling Car Images */
 .car-images {
     display: flex;
     justify-content: center;
@@ -63,4 +62,39 @@ ul li {
     margin: 5px 0;
     border-radius: 5px;
     font-weight: bold;
+}
+
+h2 {
+    font-size: 1.3em;
+    color: #2a7aad;
+}
+
+.container p {
+    font-size: 1em;
+    line-height: 1.5;
+}
+
+.container p strong {
+    color: #2a7aad;
+}
+
+/* Price Tag Styling */
+p:nth-child(14) {
+    font-size: 1.2em;
+    color: #2a7aad;
+    font-weight: bold;
+    margin-top: 20px;
+    border-top: 1px solid #e0e0e0;
+    padding-top: 15px;
+}
+
+/* Styling for the second image at the bottom */
+.container + img {
+    margin-top: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 300px;
 }
