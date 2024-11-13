@@ -69,3 +69,55 @@ ToyCar.prototype.updateFeatureList = function() {
     const featureList = document.querySelector('#feature-list');
     featureList.innerHTML = this.features.map(feature => `<li>${feature}</li>`).join('');
 };
+//  DOM Manipulation & Event Listeners
+
+document.addEventListener('DOMContentLoaded', () => {
+    const jeepWrangler = new ToyCar(
+        'Maisto', // brand
+        'Jeep Wrangler Unlimited', // model
+        'Blue', // color
+        '38268BU-MAI-BLUE', // sku
+        '694365732791', // upc
+        'Jeep', // carBrand
+        '1/24 Scale', // scale
+        'SUV', // vehicleType
+        'After 2000', // decade
+        'Window Box', // packaging
+        20.99, // price
+        ['Openable Doors', 'Free Wheeling', 'Rubber Tires'], // features
+        { length: 7.5, width: 3, height: 3 } // dimensions
+    );
+    
+    const carDetails = document.querySelector('.container');
+    
+    // Check if details have already been added to prevent duplication
+    if (!carDetails.innerHTML.includes('<h1>2015 Jeep Wrangler Unlimited</h1>')) {
+        carDetails.innerHTML += jeepWrangler.displayDetails();
+    }
+
+    // Bind event listeners to modify object properties
+    const priceInput = document.querySelector('#price-input');
+    const colorInput = document.querySelector('#color-input');
+    const featureInput = document.querySelector('#feature-input');
+    
+    document.querySelector('#update-price').addEventListener('click', () => {
+        const newPrice = parseFloat(priceInput.value);
+        if (!isNaN(newPrice)) {
+            jeepWrangler.updatePrice(newPrice);
+        }
+    });
+
+    document.querySelector('#update-color').addEventListener('click', () => {
+        const newColor = colorInput.value.trim();
+        if (newColor) {
+            jeepWrangler.updateColor(newColor);
+        }
+    });
+
+    document.querySelector('#add-feature').addEventListener('click', () => {
+        const newFeature = featureInput.value.trim();
+        if (newFeature) {
+            jeepWrangler.addFeature(newFeature);
+        }
+    });
+});
