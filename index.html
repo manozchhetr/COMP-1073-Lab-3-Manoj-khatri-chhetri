@@ -18,7 +18,7 @@
         <!-- Car Details -->
         <p><strong>Brand:</strong> Maisto</p>
         <p><strong>Model:</strong> Jeep Wrangler Unlimited</p>
-        <p><strong>Color:</strong> Blue</p>
+        <p><strong>Color:</strong> <span id="color-display">Blue</span></p>
         <p><strong>SKU:</strong> 38268BU-MAI-BLUE</p>
         <p><strong>UPC:</strong> 694365732791</p>
         <p><strong>Car Brand:</strong> Jeep</p>
@@ -26,10 +26,10 @@
         <p><strong>Vehicle Type:</strong> SUV</p>
         <p><strong>Decade:</strong> After 2000</p>
         <p><strong>Packaging:</strong> Window Box</p>
-        <p><strong>Price:</strong> $20.99</p>
+        <p><strong>Price:</strong> $<span id="price-display">20.99</span></p>
         
         <h2>Features</h2>
-        <ul>
+        <ul id="feature-list">
             <li>Openable Doors</li>
             <li>Free Wheeling</li>
             <li>Rubber Tires</li>
@@ -40,7 +40,15 @@
         <p><strong>Width:</strong> 3 inches</p>
         <p><strong>Height:</strong> 3 inches</p>
     </div>
+
+    <!-- Input fields to update properties -->
+    <div class="update-section">
+        <h2>Update Car Details</h2>
+        <p><strong>Update Price:</strong> <input type="number" id="price-input" placeholder="Enter new price"> <button id="update-price">Update Price</button></p>
+        <p><strong>Update Color:</strong> <input type="text" id="color-input" placeholder="Enter new color"> <button id="update-color">Update Color</button></p>
+        <p><strong>Add New Feature:</strong> <input type="text" id="feature-input" placeholder="Enter new feature"> <button id="add-feature">Add Feature</button></p>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>
-
